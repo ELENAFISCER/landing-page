@@ -13,19 +13,15 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+
 	<body class="is-preload">
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	
+    
 
 		<!-- Header -->
-		<header id="header">
-			<a href="index.html" class="title">Elena</a>
-			<nav>
-				<ul>
-					<li><a href="index.html">Inicio</a></li>
-					<li><a href="generic.html">Juegos</a></li>
-					<li><a href="elements.html"  class="active">Contacto</a></li>
-				</ul>
-			</nav>
-		</header>
+			
+	
 
 		<!-- Wrapper -->
 		<div id="wrapper">
@@ -37,14 +33,65 @@
 					<p><b>JUEGO SUPER DIVERTIDO EN EL QUE DESCUBRIRÁS TUS HABILIDADES MÁS RECÓNDITAS!!</b></p>
 					<!-- Audio -->
 					
-					<audio controls>
-						<source src="audio/pixelman-short-version-199924.mp3" type="audio/mp3" class="audio">
-					</audio>
+					<audio id="audio" src="audio/pixelman-short-version-199924.mp3"></audio>
+<button id="playPause" class="boton-audio" onclick="togglePlay()">
+    <span id="iconoPlay">&#9658;</span>
+    <span id="iconoPause" style="display: none;">&#10074;&#10074;</span>
+</button>
 					<style>
-						audio {
-							text-align: center; 
-				width: 100px
-						}
+				
+img {
+  width: 100%;
+  display: block;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.boton-audio {
+        background-color: #3498DB;
+        border: none;
+        border-radius: 50%;
+        color: white;
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 					
 						
 					</style> 
@@ -55,27 +102,85 @@
 </a>
 
 
+<section>
+	<button class="btn btn-primary">Jugar</button>
+</section>
 
-
-					<p><b>"Memoria Frutal"</b> es un emocionante juego de memoria diseñado para desafiar y entretener a jugadores de todas las edades. Sumérgete en un mundo vibrante lleno de frutas coloridas y diviértete mientras ejercitas tu mente.
-
-					El objetivo del juego es simple: ¡encuentra todas las parejas de frutas idénticas antes de que se acabe el tiempo! Con cada turno, los jugadores voltean dos cartas para revelar las frutas escondidas. Si las frutas coinciden, las cartas permanecen visibles y el jugador gana puntos. Si no coinciden, las cartas se vuelven a voltear y el jugador debe recordar su ubicación para futuros intentos.
-					
-					La diversión de "Memoria Frutal" radica en su simplicidad y desafío. A medida que avanza el juego, la cantidad de cartas aumenta, poniendo a prueba la capacidad de atención y memoria de los jugadores. Además, las frutas están diseñadas de manera colorida y atractiva, lo que hace que el juego sea visualmente estimulante y agradable.
-					
-					Características destacadas:
-					
-					Diversidad de frutas: Desde jugosas fresas hasta exóticos mangos, "Memoria Frutal" presenta una amplia variedad de frutas, cada una con su propio diseño encantador.
-					
-					Niveles de dificultad: El juego ofrece varios niveles de dificultad para adaptarse a jugadores de diferentes edades y habilidades. Desde principiantes hasta expertos, siempre habrá un desafío emocionante por delante.</p>
+					<p><b>"Memoria Frutal"</b>
+				
+					</p>
 
 					<!-- Carrousel -->
 					<style>
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #040608;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #000001;
+}
+						
+						.boton-audio {
+        background-color: #000000;
+        border: none;
+        border-radius: 10%;
+        color: white;
+        font-size: 15px;
+        width: 40px;
+        height: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        outline: none;
+        position:relative;
+        top: -200px;
+        left:10px;
+    }
+
+        p{
+						color: black;
+					}
+
+	
+		
+		
+
+	
+						
+            h1{
+							color: black;
+						}
+
+						
+						body{
+
+							font-family: Verdana, Geneva, Tahoma, sans-serif;
+							background-image: url('images/atardecer.jpg');
+							background-size: cover;
+							text-align: center;
+							
+
+
+						}
 						.carousel {
 							position: relative;
 							display: flex;
 							overflow: hidden;
-							width: 300px; /* Cambia el ancho según tus necesidades */
+							width: 300px; 
 							margin: 0 auto;
 						}
 					
@@ -85,7 +190,7 @@
 						}
 					
 						.carousel-image {
-							width: 300px; /* Cambia el ancho según tus necesidades */
+							width: 300px; 
 							flex-shrink: 0;
 						}
 					
@@ -107,6 +212,8 @@
 						.next-btn {
 							right: 0;
 						}
+					
+					
 					</style>
 					</head>
 					<body>
@@ -123,8 +230,42 @@
 						</div>
 						<button class="carousel-btn next-btn" onclick="nextSlide()">Next</button>
 					</div>
+		
+					
 					
 					<script>
+						document.addEventListener("DOMContentLoaded", function() {
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  let currentIndex = 0;
+  const slideWidth = slides[0].clientWidth;
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+  }
+  function updateSlider() {
+    const offset = -1 * currentIndex * slideWidth;
+    slider.style.transform = `translateX(${offset}px)`;
+  }
+  setInterval(nextSlide, 3000); // Cambia de diapositiva cada 3 segundos
+});
+
+
+						var audio = document.getElementById("audio");
+    var playPauseButton = document.getElementById("playPause");
+    var iconoPlay = document.getElementById("iconoPlay");
+    var iconoPause = document.getElementById("iconoPause");
+    function togglePlay() {
+        if (audio.paused) {
+            audio.play();
+            iconoPlay.style.display = "none";
+            iconoPause.style.display = "inline";
+        } else {
+            audio.pause();
+            iconoPlay.style.display = "inline";
+            iconoPause.style.display = "none";
+        }
+    }
 						const carouselContainer = document.querySelector('.carousel-container');
 						const carouselImages = document.querySelectorAll('.carousel-image');
 					
@@ -152,72 +293,11 @@
 					</script>
 				
 
-					<!-- Button -->
-					<section>
-						<button class="btn btn-primary">Jugar</button>
-					</section>
-
-					<!-- Form -->
-					<section>
-						<h2>Formulario de contacto</h2>
-						<form method="post" action="#">
-							<div class="row g-3">
-								<div class="col-md-6">
-									<input type="text" class="form-control" id="demo-name" name="demo-name" placeholder="Nombre" required>
-								</div>
-								<div class="col-md-6">
-									<input type="email" class="form-control" id="demo-email" name="demo-email" placeholder="Email" required>
-								</div>
-								<div class="col-md-12">
-									<select class="form-select" id="demo-category" name="demo-category" required>
-										<option value="">- Categoría -</option>
-										<option value="1">Manufactura</option>
-										<option value="2">Envío</option>
-										<option value="3">Administración</option>
-										<option value="4">Recursos Humanos</option>
-									</select>
-								</div>
-								<div class="col-md-4">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Bajo</label>
-								</div>
-								<div class="col-md-4">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-md-4">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">Alto</label>
-								</div>
-								<div class="col-md-6">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Enviar una copia por email</label>
-								</div>
-								<div class="col-md-6">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">No soy un robot</label>
-								</div>
-								<div class="col-12">
-									<textarea class="form-control" id="demo-message" name="demo-message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
-								</div>
-								<div class="col-12">
-									<button class="btn btn-primary" type="submit">Enviar</button>
-								</div>
-							</div>
-						</form>
-					</section>
-
-				</div>
-			</section>
+					
+				
 
 			<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; ElenaFis 2024. Todos los derechos reservados.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+		
 
 		</div>
 
